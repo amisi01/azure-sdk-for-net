@@ -15,31 +15,29 @@ namespace Microsoft.Azure.Management.CosmosDB.Models
     using System.Linq;
 
     /// <summary>
-    /// Cosmos DB SQL database resource object
+    /// PhysicalPartitionThroughputInfo object
     /// </summary>
-    public partial class SqlDatabaseResource
+    public partial class PhysicalPartitionThroughputInfoResource
     {
         /// <summary>
-        /// Initializes a new instance of the SqlDatabaseResource class.
+        /// Initializes a new instance of the
+        /// PhysicalPartitionThroughputInfoResource class.
         /// </summary>
-        public SqlDatabaseResource()
+        public PhysicalPartitionThroughputInfoResource()
         {
             CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the SqlDatabaseResource class.
+        /// Initializes a new instance of the
+        /// PhysicalPartitionThroughputInfoResource class.
         /// </summary>
-        /// <param name="id">Name of the Cosmos DB SQL database</param>
-        /// <param name="restoreParameters">The standard JSON format of a
-        /// container</param>
-        /// <param name="createMode">The standard JSON format of a container.
-        /// Possible values include: 'Default', 'Restore'</param>
-        public SqlDatabaseResource(string id, RestoreParameters restoreParameters = default(RestoreParameters), string createMode = default(string))
+        /// <param name="id">Id of a physical partition</param>
+        /// <param name="throughput">Throughput of a physical partition</param>
+        public PhysicalPartitionThroughputInfoResource(string id, double? throughput = default(double?))
         {
             Id = id;
-            RestoreParameters = restoreParameters;
-            CreateMode = createMode;
+            Throughput = throughput;
             CustomInit();
         }
 
@@ -49,23 +47,16 @@ namespace Microsoft.Azure.Management.CosmosDB.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets name of the Cosmos DB SQL database
+        /// Gets or sets id of a physical partition
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the standard JSON format of a container
+        /// Gets or sets throughput of a physical partition
         /// </summary>
-        [JsonProperty(PropertyName = "restoreParameters")]
-        public RestoreParameters RestoreParameters { get; set; }
-
-        /// <summary>
-        /// Gets or sets the standard JSON format of a container. Possible
-        /// values include: 'Default', 'Restore'
-        /// </summary>
-        [JsonProperty(PropertyName = "createMode")]
-        public string CreateMode { get; set; }
+        [JsonProperty(PropertyName = "throughput")]
+        public double? Throughput { get; set; }
 
         /// <summary>
         /// Validate the object.

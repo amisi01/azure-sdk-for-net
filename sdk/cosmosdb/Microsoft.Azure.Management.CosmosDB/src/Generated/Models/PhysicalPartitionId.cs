@@ -15,31 +15,25 @@ namespace Microsoft.Azure.Management.CosmosDB.Models
     using System.Linq;
 
     /// <summary>
-    /// Cosmos DB SQL database resource object
+    /// PhysicalPartitionId object
     /// </summary>
-    public partial class SqlDatabaseResource
+    public partial class PhysicalPartitionId
     {
         /// <summary>
-        /// Initializes a new instance of the SqlDatabaseResource class.
+        /// Initializes a new instance of the PhysicalPartitionId class.
         /// </summary>
-        public SqlDatabaseResource()
+        public PhysicalPartitionId()
         {
             CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the SqlDatabaseResource class.
+        /// Initializes a new instance of the PhysicalPartitionId class.
         /// </summary>
-        /// <param name="id">Name of the Cosmos DB SQL database</param>
-        /// <param name="restoreParameters">The standard JSON format of a
-        /// container</param>
-        /// <param name="createMode">The standard JSON format of a container.
-        /// Possible values include: 'Default', 'Restore'</param>
-        public SqlDatabaseResource(string id, RestoreParameters restoreParameters = default(RestoreParameters), string createMode = default(string))
+        /// <param name="id">Id of a physical partition</param>
+        public PhysicalPartitionId(string id)
         {
             Id = id;
-            RestoreParameters = restoreParameters;
-            CreateMode = createMode;
             CustomInit();
         }
 
@@ -49,23 +43,10 @@ namespace Microsoft.Azure.Management.CosmosDB.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets name of the Cosmos DB SQL database
+        /// Gets or sets id of a physical partition
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
-
-        /// <summary>
-        /// Gets or sets the standard JSON format of a container
-        /// </summary>
-        [JsonProperty(PropertyName = "restoreParameters")]
-        public RestoreParameters RestoreParameters { get; set; }
-
-        /// <summary>
-        /// Gets or sets the standard JSON format of a container. Possible
-        /// values include: 'Default', 'Restore'
-        /// </summary>
-        [JsonProperty(PropertyName = "createMode")]
-        public string CreateMode { get; set; }
 
         /// <summary>
         /// Validate the object.

@@ -12,14 +12,12 @@ namespace Microsoft.Azure.Management.CosmosDB.Models
 {
 
     /// <summary>
-    /// Defines values for OperationType.
+    /// Defines values for ThroughputPolicyType.
     /// </summary>
-    public static class OperationType
+    public static class ThroughputPolicyType
     {
-        public const string Create = "Create";
-        public const string Replace = "Replace";
-        public const string Delete = "Delete";
-        public const string Recreate = "Recreate";
-        public const string SystemOperation = "SystemOperation";
+        public const string None = "none";
+        public const string Equal = "equal";
+        public const string Custom = "custom";
     }
 }
